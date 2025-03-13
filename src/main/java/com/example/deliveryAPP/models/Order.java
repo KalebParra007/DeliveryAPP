@@ -1,6 +1,7 @@
 package com.example.deliveryAPP.models;
 
 import com.example.deliveryAPP.helpers.enums.OrderStatusEnum;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -18,6 +19,11 @@ public class Order {
     private LocalDate orderDate;
     @Column(name = "total_order",nullable = false)
     private Double totalOrder;
+
+    @ManyToOne
+    @JoinColumn(name = "fk_user", referencedColumnName = "id_user")
+    @JsonBackReference
+    private User user;
 
     public Order() {
     }
