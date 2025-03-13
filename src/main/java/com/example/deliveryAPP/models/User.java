@@ -1,7 +1,10 @@
 package com.example.deliveryAPP.models;
 
 import com.example.deliveryAPP.helpers.enums.UserEnum;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name="user_table")
@@ -20,6 +23,14 @@ public class User {
     private String numberPhone;
     @Column(name = "user_type",nullable = false)
     private UserEnum userType;
+
+    @OneToMany(mappedBy = "user")
+    @JsonManagedReference
+    private List<Address> addresses;
+
+    @OneToMany(mappedBy = "user")
+    @JsonManagedReference
+    private List<Order> orders;
 
     //Methods
 
