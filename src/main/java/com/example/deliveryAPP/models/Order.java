@@ -25,6 +25,21 @@ public class Order {
     @JsonBackReference
     private User user;
 
+    @ManyToOne
+    @JoinColumn(name = "fk_order", referencedColumnName = "order_id")
+    @JsonBackReference
+    private Payment payment;
+
+    @ManyToOne
+    @JoinColumn(name = "fk_shop", referencedColumnName = "store_id")
+    @JsonBackReference
+    private Store store;
+
+    @ManyToOne
+    @JoinColumn(name = "fk_details", referencedColumnName = "details_id")
+    @JsonBackReference
+    private Details details;
+
     public Order() {
     }
 

@@ -1,6 +1,7 @@
 package com.example.deliveryAPP.models;
 
 import com.example.deliveryAPP.helpers.enums.DeliveryEnum;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -16,6 +17,11 @@ public class Delivery {
     private DeliveryEnum StatusDelivery;
     @Column(name = "delivery_date",nullable = false)
     private LocalDate deliveryDate;
+
+    @ManyToOne
+    @JoinColumn(name = "fk_dealer", referencedColumnName = "dealer_id")
+    @JsonBackReference
+    private Dealer dealer;
 
     public Delivery() {
     }
