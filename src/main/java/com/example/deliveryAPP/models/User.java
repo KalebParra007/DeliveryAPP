@@ -25,11 +25,11 @@ public class User {
     private UserEnum userType;
 
     @OneToMany(mappedBy = "user")
-    @JsonManagedReference
+   // @JsonManagedReference
     private List<Address> addresses;
 
     @OneToMany(mappedBy = "user")
-    @JsonManagedReference
+   // @JsonManagedReference
     private List<Order> orders;
 
     //Methods

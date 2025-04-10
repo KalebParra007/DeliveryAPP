@@ -20,7 +20,7 @@ public class Delivery {
 
     @ManyToOne
     @JoinColumn(name = "fk_dealer", referencedColumnName = "dealer_id")
-    @JsonBackReference
+   // @JsonBackReference(value = "dealer")
     private Dealer dealer;
 
     public Delivery() {
