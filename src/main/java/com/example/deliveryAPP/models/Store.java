@@ -23,11 +23,11 @@ public class Store {
     private String storeCategory;
 
     @OneToMany(mappedBy = "store")
-    @JsonBackReference
+    //@JsonBackReference(value = "orders")
     private List<Order> orders;
 
     @OneToMany(mappedBy = "store")
-    @JsonManagedReference
+    //@JsonManagedReference(value = "item")
     private List<Item> items;
 
     public Store() {

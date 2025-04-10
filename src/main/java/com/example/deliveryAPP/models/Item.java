@@ -19,12 +19,12 @@ public class Item {
 
     @ManyToOne
     @JoinColumn(name = "fk_store", referencedColumnName = "store_id")
-    @JsonBackReference
+  //  @JsonBackReference(value = "store")
     private Store store;
 
     @ManyToOne
-    @JoinColumn(name="fk_item", referencedColumnName = "item_id")
-    @JsonBackReference
+    @JoinColumn(name="fk_details", referencedColumnName = "details_id")
+  //  @JsonBackReference(value = "details")
     private Details details;
 
     public Item() {

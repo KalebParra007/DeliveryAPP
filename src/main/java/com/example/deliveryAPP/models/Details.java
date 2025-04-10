@@ -18,11 +18,11 @@ public class Details {
     private Double subTotalItem;
 
     @OneToMany(mappedBy = "details")
-    @JsonManagedReference
+   // @JsonManagedReference
     private List<Order> orders;
 
     @OneToMany(mappedBy = "details")
-    @JsonManagedReference
+   // @JsonManagedReference
     private List<Item>items;
 
     public Details() {

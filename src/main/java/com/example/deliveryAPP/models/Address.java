@@ -27,7 +27,7 @@ public class Address {
 
     @ManyToOne
     @JoinColumn(name = "fk_user", referencedColumnName = "id_user")
-    @JsonBackReference
+    //@JsonBackReference(value = "user")
     private User user;
 
     public Address() {
